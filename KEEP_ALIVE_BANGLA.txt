@@ -1,0 +1,20 @@
+Keep-alive (সাইট ঘুমিয়ে না পড়ার জন্য)
+========================================
+
+ফাইল: keep_alive.py
+কাজ: প্রতি ৯-১০ মিনিট (র‍্যান্ডম) পর তোমার সাইটের /health endpoint-এ একটা request পাঠায়।
+
+চালানোর নিয়ম:
+    SITE_URL=https://YOUR-SERVICE.onrender.com python keep_alive.py
+
+Windows (CMD):
+    set SITE_URL=https://YOUR-SERVICE.onrender.com
+    python keep_alive.py
+
+সবচেয়ে ভালো উপায়:
+UptimeRobot বা cron-job.org-এ একটা monitor বানাও এবং URL দাও:
+    https://YOUR-SERVICE.onrender.com/health
+কম্পিউটার বন্ধ থাকলেও এটা কাজ করবে।
+
+নোট: এই ফাইল মূল অ্যাপের কোনো কোড বদলায় না। এটা Docker image-এ নিজে থেকে চালু হয় না;
+আলাদাভাবে চালাতে হয়।
