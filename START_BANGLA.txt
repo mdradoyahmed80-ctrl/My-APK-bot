@@ -1,0 +1,15 @@
+সহজ Deploy নির্দেশনা
+
+১) ZIP Extract করো।
+২) GitHub-এ personal-ai-agent নামে Private repository বানাও।
+৩) Extract করা personal-ai-agent ফোল্ডারের ভেতরের সব ফাইল repository root-এ upload করো।
+৪) Render → New + → Blueprint অথবা Web Service → GitHub repository connect করো।
+৫) Environment-এ শুধু এই ৩টি variable:
+   OWNER_TELEGRAM_ID = তোমার Telegram numeric ID
+   BOT_TOKEN = BotFather token
+   AI_API_KEY = primary_key,backup_key
+৬) Deploy করো।
+৭) https://YOUR-SERVICE.onrender.com/health খোলো এবং Telegram-এ bot-কে /start পাঠাও।
+
+দুটি Grok key হলে AI_API_KEY-এর একটিমাত্র value-তে comma দিয়ে দাও। একই variable দুবার বানাবে না।
+এই MVP-তে Android app বাস্তবে ফোন চালায় না। SQLite data redeploy/restart-এ হারাতে পারে।

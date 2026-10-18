@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: personal-ai-agent
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    envVars:
+      - key: OWNER_TELEGRAM_ID
+        sync: false
+      - key: BOT_TOKEN
+        sync: false
+      - key: AI_API_KEY
+        sync: false
